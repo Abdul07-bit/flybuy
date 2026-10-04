@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/responsive.css"><link rel="stylesheet" href="css/bg.css"><link rel="stylesheet" href="css/home.css">
+<title>FLYBUY | Buy smart. Move fast.</title>
+<meta name="description" content="Useful electronics, clever gadgets and everyday upgrades for the US and UK.">
+</head>
+<body class="home">
+<div id="toastHost"></div>
+<header class="site-header" id="siteHeader"></header>
+<nav class="mobile-nav" id="mobileNav"></nav>
+<div class="overlay" id="overlay"></div>
+<div class="drawer" id="cartDrawer" aria-label="Shopping cart"></div>
+<main>
+  <section class="hero" data-tone="light">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow reveal">Buy smart. Move fast.</p>
+        <h1 class="display ln-group"><span class="ln" style="--i:0"><span>Smart products.</span></span><span class="ln" style="--i:1"><span>Made to</span></span><span class="ln" style="--i:2"><span><em>move with you.</em></span></span></h1>
+        <p class="lead reveal" style="--d:.5s">Useful electronics, clever gadgets and everyday upgrades, chosen for modern life.</p>
+        <div class="cta-row reveal" style="--d:.65s"><a class="btn btn-primary magnetic" href="shop.html">Shop now</a><a class="link-quiet" href="collections.html">Explore collections</a></div>
+      </div>
+      <div class="hero-stage" id="heroStage" aria-hidden="true"></div>
+    </div>
+    <a class="scroll-cue" href="#hScroll" aria-label="Scroll to products"><i></i>Scroll</a>
+  </section>
+
+  <div class="strip" aria-label="Store promises"><div class="strip-track"><span>Fast US &amp; UK delivery</span><span>Secure checkout</span><span>Quality tested</span><span>30-day returns</span><span>Real customer support</span><span>Fast US &amp; UK delivery</span><span>Secure checkout</span><span>Quality tested</span><span>30-day returns</span><span>Real customer support</span></div></div>
+
+  <section class="hs" id="hScroll" aria-label="Products moving now">
+    <div class="hs-sticky">
+      <div class="hs-ghost" id="hsGhost" aria-hidden="true"></div>
+      <div class="container hs-head"><h2 class="display">What's<br><em>moving now.</em></h2>
+        <div class="hs-meta"><span id="hsCount">01 / 01</span><a class="link-more" href="shop.html">View all</a></div></div>
+      <div class="hs-viewport"><div class="hs-track" id="hsTrack"></div></div>
+      <div class="container"><div class="hs-bar"><i id="hsBar"></i></div></div>
+    </div>
+  </section>
+
+  <section class="cats">
+    <div class="container">
+      <h2 class="display big-head ln-group"><span class="ln" style="--i:0"><span>Shop by</span></span><span class="ln" style="--i:1"><span><em>category.</em></span></span></h2>
+      <div class="cat-grid" id="catGrid"></div>
+    </div>
+  </section>
+
+  <section class="featured"><div class="container" id="featuredSection"></div></section>
+
+  <section class="story" data-scrollp>
+    <div class="container">
+      <h2 class="display story-h">
+        <span class="sl" style="--k:-10"><span class="ln-group reveal-line"><span class="ln"><span>Things worth</span></span></span></span>
+        <span class="sl" style="--k:12"><span class="ln-group reveal-line"><span class="ln" style="--i:1"><span>making <em>room</em></span></span></span></span>
+        <span class="sl" style="--k:-6"><span class="ln-group reveal-line"><span class="ln" style="--i:2"><span><em>for.</em></span></span></span></span>
+      </h2>
+      <p class="story-p reveal">Every product here earns its place on your desk, in your bag or around your home. Fewer, better things, tested before they reach you.</p>
+    </div>
+  </section>
+
+  <section class="member" data-tone="dark" data-spot>
+    <i class="m-orb a"></i><i class="m-orb b"></i><i class="m-ring"></i>
+    <div class="container m-in">
+      <p class="eyebrow reveal">Membership</p>
+      <h2 class="display ln-group"><span class="ln" style="--i:0"><span>Fly a little</span></span><span class="ln" style="--i:1"><span><em>higher.</em></span></span></h2>
+      <p class="m-list reveal" style="--d:.3s">Early access &nbsp;/&nbsp; Exclusive offers &nbsp;/&nbsp; Member-only products &nbsp;/&nbsp; Priority support</p>
+      <a class="btn btn-light magnetic reveal" style="--d:.4s" href="account.html">Join FLYBUY</a>
+    </div>
+  </section>
+
+  <section class="news">
+    <div class="container">
+      <h2 class="display big-head ln-group"><span class="ln" style="--i:0"><span>Be first</span></span><span class="ln" style="--i:1"><span>to <em>fly.</em></span></span></h2>
+      <p class="muted reveal">New products, better finds and the things worth discovering.</p>
+      <form class="news-form reveal" onsubmit="event.preventDefault();document.getElementById('newsMsg').textContent='You are on the list. Welcome to FLYBUY.';this.reset();return false">
+        <input type="email" required placeholder="you@email.com" aria-label="Email"><button class="news-go" aria-label="Join FLYBUY">Join</button>
+      </form><div class="news-msg" id="newsMsg" role="status"></div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer" id="siteFooter"></footer>
+<button class="chat-fab" id="chatFab" aria-label="Open FLYBUY Assist"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="FLYBUY Assist"></div>
+<script src="js/utils.js"></script><script src="js/products.js"></script>
+<script src="js/cart.js"></script><script src="js/components.js"></script>
+<script src="js/cursor.js"></script><script src="js/motion.js"></script>
+<script src="js/pages.js"></script><script src="js/search.js"></script>
+<script src="js/account.js"></script><script src="js/checkout.js"></script><script src="js/bg.js"></script><script src="js/hscroll.js"></script>
+<script>window.PAGE='home';</script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/responsive.css"><link rel="stylesheet" href="css/bg.css">
+<title>Shop | FLYBUY</title><meta name="description" content="Browse all FLYBUY electronics and everyday upgrades.">
+</head><body>
+<div id="toastHost"></div>
+<header class="site-header" id="siteHeader"></header>
+<nav class="mobile-nav" id="mobileNav"></nav>
+<div class="overlay" id="overlay"></div>
+<div class="drawer" id="cartDrawer" aria-label="Shopping cart"></div>
+<main><div class="container">
+  <div style="padding-top:30px"><h1 class="display" style="font-size:2.2rem">Shop <em>all.</em></h1></div>
+  <div class="shop-toolbar">
+    <div class="tabs" id="shopTabs"></div>
+    <div class="toolbar-right">
+      <input class="search-input" id="shopSearch" placeholder="Search products" oninput="shopSearchInput(this.value)">
+      <select class="select" id="shopSort" onchange="shopSortChange(this.value)">
+        <option value="">Sort: Featured</option><option value="new">Newest</option><option value="price-asc">Price: Low to high</option>
+        <option value="price-desc">Price: High to low</option><option value="best-selling">Best selling</option>
+      </select>
+    </div>
+  </div>
+  <p class="result-count" id="resultCount"></p>
+  <div class="prod-grid" id="shopGrid" style="padding-bottom:100px"></div>
+</div></main>
+<footer class="site-footer" id="siteFooter"></footer>
+<button class="chat-fab" id="chatFab" aria-label="Open FLYBUY Assist"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="FLYBUY Assist"></div>
+<script src="js/utils.js"></script><script src="js/products.js"></script>
+<script src="js/cart.js"></script><script src="js/components.js"></script>
+<script src="js/cursor.js"></script><script src="js/motion.js"></script>
+<script src="js/pages.js"></script><script src="js/search.js"></script>
+<script src="js/account.js"></script><script src="js/checkout.js"></script><script src="js/bg.js"></script>
+<script>window.PAGE='shop';</script>
+<script src="js/app.js"></script>
+</body></html>

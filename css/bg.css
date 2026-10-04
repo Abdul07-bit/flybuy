@@ -1,0 +1,45 @@
+/* bg.css — layered live background. Only transform/opacity are animated. */
+.mesh-bg-layer{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;background:#F6F8FB;contain:strict;
+  --mx:0;--my:0;--sy:0;--lx:50%;--ly:30%;}
+/* 1 gradient field */
+.bg-field{position:absolute;inset:-15%;background:radial-gradient(48% 42% at 28% 22%,rgba(79,163,224,.20),transparent 62%),
+  radial-gradient(42% 38% at 78% 72%,rgba(150,190,235,.16),transparent 66%),radial-gradient(30% 30% at 60% 10%,rgba(255,255,255,.9),transparent 70%);
+  animation:fieldDrift 28s ease-in-out infinite alternate;}
+@keyframes fieldDrift{to{transform:translate3d(-3%,2.5%,0) scale(1.08);}}
+/* 2 mesh (parallax wrapper + slow rotation on the img) */
+.mesh-par{position:absolute;inset:0;transform:translate3d(calc(var(--mx)*-18px),calc(var(--sy)*-.06px + var(--my)*-12px),0);will-change:transform;}
+.mesh-img{position:absolute;top:50%;left:50%;width:min(140vw,1700px);height:auto;opacity:.12;filter:grayscale(1);
+  transform:translate(-50%,-50%);animation:meshDrift 160s linear infinite;}
+@keyframes meshDrift{to{transform:translate(-50%,-50%) rotate(360deg);}}
+/* 3 orbs */
+.bg-orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;will-change:transform;transition:opacity 1.2s;}
+.bg-orb.o1{width:46vmax;height:46vmax;left:-12vmax;top:-10vmax;background:rgba(79,163,224,.38);animation:orb1 38s ease-in-out infinite alternate;}
+.bg-orb.o2{width:38vmax;height:38vmax;right:-14vmax;bottom:-12vmax;background:rgba(120,150,255,.26);animation:orb2 46s ease-in-out infinite alternate;}
+.bg-orb.o3{width:24vmax;height:24vmax;left:48%;top:36%;background:rgba(255,255,255,.9);animation:orb3 32s ease-in-out infinite alternate;}
+@keyframes orb1{to{transform:translate3d(14vmax,10vmax,0) scale(1.15);}}
+@keyframes orb2{to{transform:translate3d(-12vmax,-8vmax,0) scale(1.1);}}
+@keyframes orb3{to{transform:translate3d(-16vmax,8vmax,0) scale(.85);}}
+/* 4 pointer light */
+.bg-light{position:absolute;left:0;top:0;width:60vmax;height:60vmax;margin:-30vmax 0 0 -30vmax;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(79,163,224,.20),transparent);opacity:.9;transition:opacity .8s;
+  transform:translate3d(var(--lx),var(--ly),0);will-change:transform;}
+.mesh-bg-layer.hot .bg-light{opacity:1;}
+.mesh-bg-layer.hot .bg-orb{opacity:.7;}
+/* 5 grain */
+.bg-grain{position:absolute;inset:0;opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+/* dark sections fade the light bg down so type stays readable */
+body.on-dark .mesh-bg-layer{background:#080C16;}
+.mesh-bg-layer{transition:background .8s var(--ease);}
+@media (max-width:700px){
+  .mesh-img{width:220vw;opacity:.08;animation-duration:240s;} .bg-light{display:none;} .bg-orb{filter:blur(50px);} .bg-orb.o3{display:none;}
+}
+@media (prefers-reduced-motion:reduce){.bg-field,.mesh-img,.bg-orb{animation:none;} .bg-light{display:none;} .mesh-par{transform:none;}}
+
+/* tilt (cards, desktop pointer only) */
+.tilt-3d{transform-style:preserve-3d;transition:transform .5s var(--ease);will-change:transform;}
+/* button ripple */
+.btn{position:relative;overflow:hidden;}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);pointer-events:none;animation:rippleOut .6s ease-out forwards;}
+.btn-outline .ripple{background:rgba(79,163,224,.25);}
+@keyframes rippleOut{to{transform:scale(3.2);opacity:0;}}

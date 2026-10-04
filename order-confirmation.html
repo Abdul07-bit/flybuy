@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/responsive.css"><link rel="stylesheet" href="css/bg.css">
+<title>Order confirmed | FLYBUY</title>
+</head><body>
+<div id="toastHost"></div>
+<header class="site-header" id="siteHeader"></header>
+<nav class="mobile-nav" id="mobileNav"></nav>
+<div class="overlay" id="overlay"></div>
+<div class="drawer" id="cartDrawer" aria-label="Shopping cart"></div>
+<main><div class="container"><div class="confirm">
+  <div class="check"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="m5 13 4 4L19 7"/></svg></div>
+  <h1 class="display" style="font-size:2.1rem">Order confirmed.</h1>
+  <p class="muted" id="confirmSub"></p>
+  <div class="order-box" id="confirmBox"></div>
+  <div class="cta-row" style="justify-content:center"><a class="btn btn-primary magnetic" style="width:auto" href="account.html?tab=orders">VIEW ORDERS</a><a class="btn btn-outline magnetic" style="width:auto" href="shop.html">CONTINUE SHOPPING</a></div>
+  <div class="notice-box" style="margin-top:24px;text-align:left">Demo order — no payment was actually charged.</div>
+</div></div></main>
+<footer class="site-footer" id="siteFooter"></footer>
+<button class="chat-fab" id="chatFab" aria-label="Open FLYBUY Assist"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="FLYBUY Assist"></div>
+<script src="js/utils.js"></script><script src="js/products.js"></script>
+<script src="js/cart.js"></script><script src="js/components.js"></script>
+<script src="js/cursor.js"></script><script src="js/motion.js"></script>
+<script src="js/pages.js"></script><script src="js/search.js"></script>
+<script src="js/account.js"></script><script src="js/checkout.js"></script><script src="js/bg.js"></script>
+<script>
+  const o = STATE.orders.find(x => x.id === qs('order'));
+  if (o) {
+    document.getElementById('confirmSub').textContent = 'A confirmation would normally be emailed to ' + o.email + '.';
+    document.getElementById('confirmBox').innerHTML = '<div class="co-line"><span>Order number</span><span>' + o.id + '</span></div>'
+      + o.items.map(i => '<div class="co-line"><span>' + i.name + ' × ' + i.qty + '</span><span>' + fmtPrice(i.price * i.qty) + '</span></div>').join('')
+      + '<div class="co-line total"><span>Total</span><span>' + fmtPrice(o.totals.total) + '</span></div>';
+  } else {
+    document.getElementById('confirmSub').textContent = 'Order not found in this browser\'s demo history.';
+  }
+</script>
+</body></html>

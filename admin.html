@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/bg.css">
+<title>Admin | FLYBUY</title>
+<meta name="robots" content="noindex">
+</head><body class="admin-page">
+<div id="toastHost"></div>
+
+<div class="admin-gate" id="adminGate">
+  <h1 class="display" style="font-size:1.8rem;margin-bottom:10px">Admin <em>sign in.</em></h1>
+  <p class="muted" style="margin-bottom:24px">Demo-only gate — not real authentication. Production must verify this server-side.</p>
+  <form onsubmit="return adminLogin(event)">
+    <div class="field" style="text-align:left"><label>Email</label><input required id="adminEmail" type="email" autocomplete="username"></div>
+    <div class="field" style="text-align:left"><label>Password</label><input required id="adminPass" type="password" autocomplete="current-password"></div>
+    <button class="btn btn-primary btn-block" type="submit">SIGN IN</button>
+  </form>
+  <div id="adminErr" style="color:var(--color-danger);font-size:13px;margin-top:12px"></div>
+  <a href="index.html" class="muted" style="display:block;margin-top:20px;font-size:13px;text-decoration:underline">← Back to store</a>
+</div>
+
+<div class="admin-shell hide" id="adminShell">
+  <div class="admin-side">
+    <div class="logo-mark"><span>FLYBUY</span><span class="dot"></span> <span style="font-size:11px;opacity:.6;margin-left:4px">ADMIN</span></div>
+    <button data-tab="dashboard" onclick="location.href='admin.html?tab=dashboard'">Dashboard</button>
+    <button data-tab="products" onclick="location.href='admin.html?tab=products'">Products</button>
+    <button data-tab="add-product" onclick="location.href='admin.html?tab=add-product'">+ Add Product</button>
+    <button data-tab="add-category" onclick="location.href='admin.html?tab=add-category'">+ Add Category</button>
+    <button data-tab="orders" onclick="location.href='admin.html?tab=orders'">Orders</button>
+    <button data-tab="customers" onclick="location.href='admin.html?tab=customers'">Customers</button>
+    <button onclick="adminLogout()" style="margin-top:20px;color:#fff">Log out</button>
+  </div>
+  <div class="admin-main" id="adminMain"></div>
+</div>
+
+<script src="js/utils.js"></script><script src="js/products.js"></script>
+<script src="js/cart.js"></script><script src="js/components.js"></script>
+<script src="js/cursor.js"></script><script src="js/motion.js"></script>
+<script src="js/pages.js"></script><script src="js/search.js"></script>
+<script src="js/account.js"></script><script src="js/checkout.js"></script>
+<script src="js/bg.js"></script>
+<script src="js/admin.js"></script>
+<script>renderAdmin();</script>
+</body></html>

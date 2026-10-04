@@ -1,0 +1,24 @@
+body{
+  font-family:'Manrope',-apple-system,Segoe UI,Roboto,sans-serif;
+  background:var(--color-background); color:var(--color-black);
+  -webkit-font-smoothing:antialiased; line-height:1.5;
+}
+.container{max-width:var(--container);margin:0 auto;padding:0 24px;}
+h1,h2,h3{font-family:'Fraunces','Manrope',sans-serif;font-weight:500;letter-spacing:-0.025em;line-height:1.05;font-variation-settings:'opsz' 96;}
+.display{font-family:'Fraunces','Manrope',sans-serif;font-weight:500;letter-spacing:-0.035em;line-height:.95;font-variation-settings:'opsz' 144;}
+.display em{font-style:italic;color:var(--color-blue);font-weight:350;letter-spacing:-0.02em;}
+.eyebrow{font-size:14px;font-weight:600;letter-spacing:.01em;color:var(--color-muted);margin-bottom:22px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:'';width:34px;height:1px;background:currentColor;}
+.muted{color:var(--color-muted);}
+:focus-visible{outline:2px solid var(--color-blue);outline-offset:3px;}
+section{padding:clamp(72px,11vw,160px) 0;}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:44px;}
+.section-head h2{font-size:clamp(1.8rem,4vw,2.8rem);}
+.section-head p{max-width:360px;color:var(--color-muted);}
+.link-more{font-size:13px;font-weight:700;color:var(--color-blue);text-decoration:underline;text-underline-offset:3px;}
+main{padding-top:84px;}
+
+html{scroll-behavior:auto;}
+body{overflow-x:hidden;overflow-x:clip;}
+body.home main{padding-top:0;}
+.hide{display:none!important;}

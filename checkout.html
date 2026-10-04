@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/responsive.css"><link rel="stylesheet" href="css/bg.css">
+<title>Checkout | FLYBUY</title>
+</head><body>
+<div id="toastHost"></div>
+<header class="site-header" id="siteHeader"></header>
+<nav class="mobile-nav" id="mobileNav"></nav>
+<div class="overlay" id="overlay"></div>
+<div class="drawer" id="cartDrawer" aria-label="Shopping cart"></div>
+<main><div class="container"><div class="simple-page" style="max-width:1100px">
+<div class="checkout-wrap">
+  <div>
+    <div class="co-steps"><span class="active">1 Info</span><span>2 Shipping</span><span>3 Payment</span><span>4 Confirm</span></div>
+    <h2 class="display" style="font-size:1.7rem;margin-bottom:20px">Checkout</h2>
+    <form onsubmit="return submitOrder(event)">
+      <div class="field-row"><div class="field"><label>First name</label><input required name="first"></div><div class="field"><label>Last name</label><input required name="last"></div></div>
+      <div class="field"><label>Email</label><input required type="email" name="email"></div>
+      <div class="field"><label>Phone</label><input required name="phone"></div>
+      <div class="field"><label>Address</label><input required name="addr"></div>
+      <div class="field-row"><div class="field"><label>City</label><input required name="city"></div><div class="field"><label>Postal / ZIP code</label><input required name="zip"></div></div>
+      <div class="field"><label>Country</label><select name="country"><option>United States</option><option>United Kingdom</option></select></div>
+      <div class="notice-box">This is a demo checkout. In production, this step creates a Shopify cart and redirects you to Shopify's secure checkout — no card details are ever collected on this page, and FLYBUY never sees or stores them.</div>
+      <button class="btn btn-primary btn-block magnetic" style="margin-top:18px" type="submit" id="coTotalBtn">PLACE ORDER</button>
+    </form>
+  </div>
+  <div class="co-summary"><h3 style="font-size:13px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:16px">Order summary</h3><div id="coSummary"></div></div>
+</div>
+</div></div></main>
+<footer class="site-footer" id="siteFooter"></footer>
+<button class="chat-fab" id="chatFab" aria-label="Open FLYBUY Assist"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="FLYBUY Assist"></div>
+<script src="js/utils.js"></script><script src="js/products.js"></script>
+<script src="js/cart.js"></script><script src="js/components.js"></script>
+<script src="js/cursor.js"></script><script src="js/motion.js"></script>
+<script src="js/pages.js"></script><script src="js/search.js"></script>
+<script src="js/account.js"></script><script src="js/checkout.js"></script><script src="js/bg.js"></script>
+<script>window.PAGE='checkout';</script>
+<script src="js/app.js"></script>
+</body></html>
